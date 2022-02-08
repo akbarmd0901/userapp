@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all 
   end
 
   def show
@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = current_user.products.build(product_params)
-
     if @product.save
       flash[:notice] = "product has saved"
       redirect_to @product

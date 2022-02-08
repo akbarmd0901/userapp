@@ -1,0 +1,15 @@
+<h1>Products</h1>
+
+<ul>
+  <% @products.each do |product| %>
+ 
+    <li>
+      <%= product.name %><br>
+      
+      <%= link_to "show product", product %>
+    </li>
+     <p><%= time_ago_in_words(product.created_at) %></p>
+ 
+  <% end %>
+</ul>
+<%= link_to "New Product", new_product_path %>

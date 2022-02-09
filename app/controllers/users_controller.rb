@@ -6,9 +6,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def self.create
+  def create
     @user = User.create(user_params)
-    sessions[:user_id] = @user.id
+    session[:user_id] = @user.id
     redirect_to '/login'
   end
 

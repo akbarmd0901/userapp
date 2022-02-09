@@ -3,11 +3,13 @@
 <ul>
   <% @products.each do |product| %>
  
-    <li>
+    
       <%= product.name %><br>
-      
+      <%= product.price %><br>
+      <%= product.description %><br>
+      <%= image_tag product.image, :size => "100" if product.image.attached? %><br>
       <%= link_to "show product", product %>
-    </li>
+    
      <p><%= time_ago_in_words(product.created_at) %></p>
  
   <% end %>
